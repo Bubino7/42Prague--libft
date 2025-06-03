@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbubak <jbubak@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: jbubak <jbubak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 08:59:07 by jbubak            #+#    #+#             */
-/*   Updated: 2025/05/30 19:11:09 by jbubak           ###   ########.fr       */
+/*   Updated: 2025/06/03 19:55:51 by jbubak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -289,5 +289,28 @@
 
 	result = ft_strncmp(str1, str3, 7); // str1 < str2
 	printf("Result: %i\n", result);
+	return (0);
+}*/
+
+
+	// ft_memchr TEST CASE
+/*int	main()
+{
+	char	arr[] = "hello";
+	char	*res = ft_memchr(arr, 'e', 0);
+
+	printf("%s\n", res);
+	return (0);
+}*/
+
+
+	// ft_memcmp TEST CASE
+/*int	main()
+{
+	char a[] = {1, 2, 3};
+	char b[] = {1, 2, 4};
+
+	int result = ft_memcmp(a, b, 3);
+	printf("%i\n", result);
 	return (0);
 }*/
