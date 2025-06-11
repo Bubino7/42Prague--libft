@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbubak <jbubak@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbubak <jbubak@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 08:59:07 by jbubak            #+#    #+#             */
-/*   Updated: 2025/06/03 19:55:51 by jbubak           ###   ########.fr       */
+/*   Updated: 2025/06/11 23:08:16 by jbubak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,12 +175,12 @@
 	// ft_strlcat TEST CASE
 /*int	main()
 {
-	char buffer[12] = "Hello";
-    const char *to_add = "World!";
+	char buffer[10] = "a";
+    const char *to_add = "lorem ipsum dolor sit amet";
     size_t result;
 
     // Try to append "World!" to "Hello" in a buffer of size 12
-    result = ft_strlcat(buffer, to_add, sizeof(buffer));
+    result = ft_strlcat(buffer, to_add, 0);
 
     printf("Resulting string: '%s'\n", buffer);
     printf("Total length tried to create: %zu\n", result);
@@ -252,22 +252,14 @@
 /*int	main()
 {
 	const char	*str = "This is the best string.";
-	char	*ptr = ft_strrchr(str, 't');
+	char	*ptr = ft_strrchr(str, '\0');
 
 	if (ptr) {
-        printf("Found 't'\n");
+        printf("Found it\n");
 		printf("%s\n\n", ptr);
 	}
     else
-        printf("'t' not found\n");
-
-    ptr = ft_strchr(str, 'z');
-    if (ptr) {
-        printf("Found 'z'\n");
-		printf("%s\n", ptr);
-	}
-    else
-        printf("'z' not found\n");
+        printf("Could not find it\n");
 
     return 0;
 }*/
@@ -314,3 +306,53 @@
 	printf("%i\n", result);
 	return (0);
 }*/
+
+
+	// ft_strnstr TEST CASE
+/*int	main()
+{
+	const char	*haystack = "Hello, world!";
+	const char	*needle = "wor";
+
+	printf("%s\n", ft_strnstr(haystack, needle, 20));
+	return (0);
+}*/
+
+
+	// ft_atoi TEST CASE
+/*int	main()
+{
+	char	*str = "   +-1234567890";
+
+	printf("%i\n", ft_atoi(str));
+	return (0);
+}*/
+
+
+	// ft_calloc TEST CASE
+/*int	main()
+{
+	int	*ptr = (int *)ft_calloc(10, sizeof(int));
+
+	for (int i = 0; i < 10; i++)
+		printf("%d ", ptr[i]);
+	return (0);
+}*/
+
+
+	// ft_strdup TEST CASE
+/*int	main()
+{
+	char	*str = "Hello, World!";
+	char	*dup = ft_strdup(str);
+
+	printf("%s\n", dup);
+	return (0);
+}*/
+
+
+	// ft_substr TEST CASE
+int	main()
+{
+
+}
