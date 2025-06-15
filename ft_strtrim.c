@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbubak <jbubak@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 23:10:50 by jbubak            #+#    #+#             */
-/*   Updated: 2025/06/12 19:15:19 by jbubak           ###   ########.fr       */
+/*   Created: 2025/06/14 11:29:08 by jbubak            #+#    #+#             */
+/*   Updated: 2025/06/15 13:42:11 by jbubak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str);
-char	*ft_strdup(const char *s);
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
+	size_t	start;
+	size_t	end;
 	char	*ptr;
-	size_t	i;
 
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-	{
-		ptr = ft_strdup("");
-		return (ptr);
-	}
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	ptr = malloc(len + 1);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	ptr = (char *)malloc(end - start + 1);
 	if (!ptr)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		ptr[i] = s[start + i];
-		i++;
-	}
-	ptr[i] = '\0';
+	ft_strlcpy(ptr, s1 + start, end - start + 1);
 	return (ptr);
 }

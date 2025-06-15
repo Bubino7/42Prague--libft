@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbubak <jbubak@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 23:10:50 by jbubak            #+#    #+#             */
-/*   Updated: 2025/06/12 19:15:19 by jbubak           ###   ########.fr       */
+/*   Created: 2025/06/12 19:19:00 by jbubak            #+#    #+#             */
+/*   Updated: 2025/06/14 11:35:13 by jbubak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str);
-char	*ft_strdup(const char *s);
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;
-	size_t	i;
 
-	if (!s)
+	if (!s1 && !s2)
 		return (NULL);
-	if (start >= ft_strlen(s))
-	{
-		ptr = ft_strdup("");
-		return (ptr);
-	}
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	ptr = malloc(len + 1);
+	ptr = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!ptr)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		ptr[i] = s[start + i];
-		i++;
-	}
-	ptr[i] = '\0';
+	ft_strlcpy(ptr, s1, ft_strlen(s1) + 1);
+	ft_strlcat(ptr, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
 	return (ptr);
 }

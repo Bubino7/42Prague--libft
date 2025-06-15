@@ -6,7 +6,7 @@
 /*   By: jbubak <jbubak@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 08:59:07 by jbubak            #+#    #+#             */
-/*   Updated: 2025/06/11 23:08:16 by jbubak           ###   ########.fr       */
+/*   Updated: 2025/06/15 23:36:41 by jbubak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -352,7 +352,57 @@
 
 
 	// ft_substr TEST CASE
+/*int	main()
+{
+	char	*str = "Hello, World!";
+	char	*substr = ft_substr(str, 9, 5);
+
+	printf("%s\n", substr);
+	return (0);
+}*/
+
+
+	// ft_strjoin TEST CASE
+/*int	main()
+{
+	char	*str1 = "Hello, ";
+	char	*str2 = "World!";
+	char	*join = ft_strjoin(str1, str2);
+
+	printf("%s\n", join);
+	return (0);
+}*/
+
+
+	// ft_strtrim TEST CASE
+/*int	main()
+{
+	char	*str = " -  Hello, World!  - ";
+	char	*trim = ft_strtrim(str, " -");
+
+	printf("%s\n", trim);
+	return (0);
+}*/
+
+
+	// ft_split TEST CASE
+/*int	main()
+{
+	char	*str = "   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
+	char	**split = ft_split(str, ' ');
+
+	for (int i = 0; split[i]; i++)
+		printf("%s\n", split[i]);
+	return (0);
+}*/
+
+
+	// ft_itoa TEST CASE
 int	main()
 {
+	int		n = -214;
+	char	*res = ft_itoa(n);
 
+	printf("%s\n", res);
+	return (0);
 }
