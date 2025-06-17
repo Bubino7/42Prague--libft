@@ -6,7 +6,7 @@
 /*   By: jbubak <jbubak@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 08:59:07 by jbubak            #+#    #+#             */
-/*   Updated: 2025/06/17 22:21:49 by jbubak           ###   ########.fr       */
+/*   Updated: 2025/06/17 23:19:38 by jbubak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -471,8 +471,79 @@ int	main()
 
 
 	// ft_putnbr_fd TEST CASE
-int main(void)
+/*int main(void)
 {
     ft_putnbr_fd(123, 1);
     return (0);
-}
+}*/
+
+
+//	BONUS FUNCTIONS
+
+	// ft_lstnew TEST CASE
+/*int	main()
+{
+	t_list	*new = ft_lstnew("Hello, World!");
+
+	printf("%s\n", (char *)new->content);
+	return (0);
+}*/
+
+
+	// ft_lstadd_front TEST CASE
+/*int	main()
+{
+	t_list	*lst = ft_lstnew("Hello, World!");
+	t_list	*new = ft_lstnew("Hello, Moon!");
+	t_list	*new2 = ft_lstnew("Hello, Jupiter!");
+
+	ft_lstadd_front(&lst, new);
+	ft_lstadd_front(&lst, new2);
+	printf("%s\n", (char *)lst->content);
+	printf("%s\n", (char *)lst->next->content);
+	printf("%s\n", (char *)lst->next->next->content);
+	return (0);
+}*/
+
+
+	// ft_lstsize TEST CASE
+/*int	main()
+{
+	t_list	*lst = ft_lstnew("Hello, World!");
+	t_list	*new = ft_lstnew("Hello, Moon!");
+	t_list	*new2 = ft_lstnew("Hello, Jupiter!");
+
+	ft_lstadd_front(&lst, new);
+	ft_lstadd_front(&lst, new2);
+
+	printf("%i\n", ft_lstsize(lst));
+	return (0);
+}*/
+
+
+	// ft_lstlast TEST CASE
+/*int	main()
+{
+	t_list	*lst = ft_lstnew("Hello, World!");
+	t_list	*new = ft_lstnew("Hello, Moon!");
+	t_list	*new2 = ft_lstnew("Hello, Jupiter!");
+
+	ft_lstadd_front(&lst, new);
+	ft_lstadd_front(&lst, new2);
+
+	printf("%s\n", (char *)ft_lstlast(lst)->content);
+	return (0);
+}*/
+
+
+	// ft_lstadd_back TEST CASE
+/*int	main()
+{
+	t_list	*lst = ft_lstnew("Hello, World!");
+	t_list	*new = ft_lstnew("Hello, Moon!");
+
+	ft_lstadd_back(&lst, new);
+	printf("%s\n", (char *)lst->content);
+	printf("%s\n", (char *)lst->next->content);
+	return (0);
+}*/
