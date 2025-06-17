@@ -6,7 +6,7 @@
 /*   By: jbubak <jbubak@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 13:48:50 by jbubak            #+#    #+#             */
-/*   Updated: 2025/06/15 22:48:44 by jbubak           ###   ########.fr       */
+/*   Updated: 2025/06/16 19:16:08 by jbubak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (s[i] && j < ft_count_words(s, c))
 	{
 		result[j] = ft_extract_word(s, c, &i);
 		if (!result[j])

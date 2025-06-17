@@ -6,7 +6,7 @@
 /*   By: jbubak <jbubak@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 08:59:07 by jbubak            #+#    #+#             */
-/*   Updated: 2025/06/15 23:36:41 by jbubak           ###   ########.fr       */
+/*   Updated: 2025/06/17 22:21:49 by jbubak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -398,11 +398,81 @@
 
 
 	// ft_itoa TEST CASE
-int	main()
+/*int	main()
 {
 	int		n = -214;
 	char	*res = ft_itoa(n);
 
 	printf("%s\n", res);
 	return (0);
+}*/
+
+
+	// ft_strmapi TEST CASE
+/*char	ft_toupper_wrapper(unsigned int i, char c)
+{
+	(void)i;
+	return (ft_toupper(c));
+}
+
+int	main()
+{
+	char	*str = "Hello, World!";
+	char	*res = ft_strmapi(str, &ft_toupper_wrapper);
+
+	printf("%s\n", res);
+	return (0);
+}*/
+
+
+	// ft_striteri TEST CASE
+/*void	ft_toupper_wrapper(unsigned int i, char *c)
+{
+	(void)i;
+	*c = ft_toupper(*c);
+}
+
+int	main()
+{
+	char	str[] = "Hello, World!";
+	ft_striteri(str, ft_toupper_wrapper);
+	printf("%s\n", str);
+	return (0);
+}*/
+
+
+	// ft_putchar_fd TEST CASE
+/*int main()
+{
+    ft_putchar_fd('H', STDOUT_FILENO);
+    ft_putchar_fd('i', STDOUT_FILENO);
+    ft_putchar_fd('\n', STDOUT_FILENO);
+
+    return (0);
+}*/
+
+
+	// ft_putstr_fd TEST CASE
+/*int main(void)
+{
+    ft_putstr_fd("Hello, World!\n", STDOUT_FILENO);
+    ft_putstr_fd("This is an error message\n", STDERR_FILENO);
+    return (0);
+}*/
+
+
+	// ft_putendl_fd TEST CASE
+/*int main(void)
+{
+    ft_putendl_fd("Hello, World!", STDOUT_FILENO);
+    ft_putendl_fd("This is an error message", STDERR_FILENO);
+    return (0);
+}*/
+
+
+	// ft_putnbr_fd TEST CASE
+int main(void)
+{
+    ft_putnbr_fd(123, 1);
+    return (0);
 }
