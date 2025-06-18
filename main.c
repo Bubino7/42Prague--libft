@@ -6,7 +6,7 @@
 /*   By: jbubak <jbubak@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 08:59:07 by jbubak            #+#    #+#             */
-/*   Updated: 2025/06/17 23:19:38 by jbubak           ###   ########.fr       */
+/*   Updated: 2025/06/18 23:10:29 by jbubak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -547,3 +547,147 @@ int	main()
 	printf("%s\n", (char *)lst->next->content);
 	return (0);
 }*/
+
+
+	// ft_lstdelone TEST CASE
+/*void	del_string(void *content)
+{
+	if (content)
+		free(content);
+}
+
+int main()
+{
+	char	*str = ft_strdup("Hello, World!");
+	char	*str2 = ft_strdup("Hello, Moon!");
+	t_list	*node = ft_lstnew(str);
+	t_list	*node2 = ft_lstnew(str2);
+
+	node->next = node2;
+	printf("%s\n", (char *)node->content);
+	printf("%s\n", (char *)node->next->content);
+	ft_lstdelone(node2, &del_string);
+	printf("%s\n", (char *)node->content);
+	printf("%s\n", (char *)node->next->content);
+    return (0);
+}*/
+
+
+	// ft_lstclear TEST CASE
+/*void	del_string(void *content)
+{
+	if (content)
+		free(content);
+}
+
+int main()
+{
+	char	*str = ft_strdup("Hello, World!");
+	char	*str2 = ft_strdup("Hello, Moon!");
+	char	*str3 = ft_strdup("Hello, Jupiter!");
+	t_list	*node = ft_lstnew(str);
+	t_list	*node2 = ft_lstnew(str2);
+	t_list	*node3 = ft_lstnew(str3);
+
+	node->next = node2;
+	node2->next = node3;
+	while (node)
+	{
+		printf("%s\n", (char *)node->content);
+		node = node->next;
+	}
+
+	ft_lstclear(&node, &del_string);
+	if (node == NULL)
+		printf("\nnode is NULL\n");
+    return (0);
+}*/
+
+
+	// ft_lstiter TEST CASE
+/*void	ft_toupper_wrapper(void *content)
+{
+    char *str = (char *)content;
+    int i = 0;
+
+    while (str[i])
+    {
+        str[i] = ft_toupper(str[i]);
+        i++;
+    }
+}
+
+int	main()
+{
+	char	*str = ft_strdup("Hello, World!");
+	char	*str2 = ft_strdup("Hello, Moon!");
+	char	*str3 = ft_strdup("Hello, Jupiter!");
+	t_list	*node = ft_lstnew(str);
+	t_list	*node2 = ft_lstnew(str2);
+	t_list	*node3 = ft_lstnew(str3);
+	t_list	*list = node;
+
+	node->next = node2;
+	while (node)
+	{
+		printf("%s\n", (char *)node->content);
+		node = node->next;
+	}
+	printf("%s\n", (char *)node3->content);
+	ft_lstiter(list, &ft_toupper_wrapper);
+	while (list)
+	{
+		printf("%s\n", (char *)list->content);
+		list = list->next;
+	}
+	printf("%s\n", (char *)node3->content);
+	return (0);
+}*/
+
+
+	// ft_lstmap TEST CASE
+void	*ft_toupper_wrapper(void *content)
+{
+    char *str = (char *)content;
+    int i = 0;
+
+    while (str[i])
+    {
+        str[i] = ft_toupper(str[i]);
+        i++;
+    }
+	return (str);
+}
+
+void	del_string(void *content)
+{
+	if (content)
+		free(content);
+}
+
+int main()
+{
+    char *str = ft_strdup("Hello, World!");
+    char *str2 = ft_strdup("Hello, Moon!");
+    t_list *node = ft_lstnew(str);
+    t_list *node2 = ft_lstnew(str2);
+    t_list *list;
+
+    node->next = node2;
+    printf("Original list:\n");
+    t_list *curr = node;
+    while (curr)
+    {
+        printf("%s\n", (char *)curr->content);
+        curr = curr->next;
+    }
+    list = ft_lstmap(node, &ft_toupper_wrapper, &del_string);
+    printf("New list:\n");
+    curr = list;
+    while (curr)
+    {
+        printf("%s\n", (char *)curr->content);
+        curr = curr->next;
+    }
+    return (0);
+}
